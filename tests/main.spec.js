@@ -1,58 +1,30 @@
-import { expect } from 'chai'
-import { sum, sub, mult, div } from '../src/main';
+import { expect } from 'chai';
+import { search } from '../src/main';
+import { searchAlbums } from '../src/main';
+import { searchArtists } from '../src/main';
+import { searchTracks } from '../src/main';
+import { searchPlaylists } from '../src/main';
 
-
-describe('Calc', () => {
-
-  describe('Smoke Test', () => {
-    it('should exists method sum', () => {
-      expect(sum).to.exist;
-      expect(sum).to.be.a('function');
+describe('Spotify wrapper', () => {
+  describe('smoke tests', () => {
+    it('should exist the search method', () => {
+      expect(search).to.exist;
     });
-    it('should exists method sub', () => {
-      expect(sub).to.exist;
-      expect(sub).to.be.a('function');
+    it('should exist the searchAlbums method', () => {
+      expect(searchAlbums).to.exist;
     });
-    it('should exists method mult', () => {
-      expect(mult).to.exist;
-      expect(mult).to.be.a('function');
+    it('should exist the searchArtists method', () => {
+      expect(searchArtists).to.exist;
     });
-    it('should exists method div', () => {
-      expect(div).to.exist;
-      expect(div).to.be.a('function');
+    it('should exist the searchTracks method', () => {
+      expect(searchTracks).to.exist;
     });
-  });
-
-  describe('Sum', () => {
-    it('should return 4 when sum(2,2)', () => {
-      expect(sum(2, 2)).to.be.equal(4);
+    it('should exist the searchPlaylists method', () => {
+      expect(searchPlaylists).to.exist;
     });
   });
 
-  describe('Sub', () => {
-    it('should return 4 when sub(2,2)', () => {
-      expect(sub(6, 2)).to.be.equal(4);
-    });
-
-     it('should return -4 when sub(6,10)', () => {
-      expect(sub(6, 10)).to.be.equal(-4);
-    });
-  });
-
-  describe('mult', () => {
-    it('should return 4 when mult(2,2)', () => {
-      expect(mult(2, 2)).to.be.equal(4);
-    });
-  });
-
-
-  describe('div', () => {
-    it('should return 4 when div(4, 2)', () => {
-      expect(div(4, 2)).to.be.equal(2);
-    });
-
-    it('should return `it`s not possible divibe by zero`', () => {
-      expect(div(4, 0)).to.be.equal('it`s not possible divibe by zero');
-    });
+  describe('Generic Search', () => {
+    
   });
 });
