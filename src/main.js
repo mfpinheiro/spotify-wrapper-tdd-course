@@ -1,4 +1,6 @@
-export const search = () => {};
+global.fetch = require('node-fetch');
+// eslint-disable-next-line
+export const search = (query, type) => fetch(`https://api.spotify.com/v1/search?q=${query}&type=${type}`);
 export const searchAlbums = () => {};
 export const searchArtists = () => {};
 export const searchTracks = () => {};
