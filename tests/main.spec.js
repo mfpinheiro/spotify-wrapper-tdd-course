@@ -25,6 +25,8 @@ describe('Spotify wrapper', () => {
   });
 
   describe('Generic Search', () => {
-    
+    it('should fetch function', () => {
+      
+    });
   });
 });
