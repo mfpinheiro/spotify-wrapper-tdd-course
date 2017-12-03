@@ -9,6 +9,7 @@
     "server": "./node_modules/.bin/webpack-dev-server --inline --open",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "lint-fix": "./node_modules/.bin/eslint src/*.js --fix",
+    "lint-fix:tests": "./node_modules/.bin/eslint tests/*.js --fix",
     "prepush": "npm run lint && npm run test:coverage",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
     "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch --require babel-register --reporter=list",
