@@ -4,18 +4,18 @@ import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import sinonStubPromise from 'sinon-stub-promise';
 
+import { search } from '../src/search';
+import { searchAlbums } from '../src/search';
+import { searchArtists } from '../src/search';
+import { searchTracks } from '../src/search';
+import { searchPlaylists } from '../src/search';
+
 global.fetch = require('node-fetch');
 
 chai.use(sinonChai);
 sinonStubPromise(sinon);
 
-import { search } from '../src/main';
-import { searchAlbums } from '../src/main';
-import { searchArtists } from '../src/main';
-import { searchTracks } from '../src/main';
-import { searchPlaylists } from '../src/main';
-
-describe('Spotify wrapper', () => {
+describe('Search', () => {
   let fetchedStub;
   let promise;
   beforeEach(() => {

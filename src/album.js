@@ -1,14 +1,13 @@
-global.fetch = require('node-fetch');
+/* global fetch */
+
+import { API_URL, HEADERS } from './config';
+import toJSON from './utils';
 
 export const getAlbum = id =>
-  fetch(`https://api.spotify.com/v1/albums/${id}?market=ES`).then(data =>
-    data.json()
-  );
+  fetch(`${API_URL}/albums/${id}?market=ES`, HEADERS).then(toJSON);
+
 export const getAlbums = ids =>
-  fetch(`https://api.spotify.com/v1/albums/?ids=${ids}?market=ES`).then(data =>
-    data.json()
-  );
+  fetch(`${API_URL}/albums/?ids=${ids}?market=ES`, HEADERS).then(toJSON);
+
 export const getAlbumTracks = id =>
-  fetch(`https://api.spotify.com/v1/albums/${id}/tracks`).then(data =>
-    data.json()
-  );
+  fetch(`${API_URL}/albums/${id}/tracks`, HEADERS).then(toJSON);
