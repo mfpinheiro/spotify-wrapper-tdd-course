@@ -1,5 +1,9 @@
 # Spotify Wrapper
 
+[![Build Status](https://travis-ci.org/mfpinheiro/spotify-wrapper-tdd-course.svg?branch=master)](https://travis-ci.org/mfpinheiro/spotify-wrapper-tdd-course)
+
+[![Coverage Status](https://coveralls.io/repos/github/mfpinheiro/spotify-wrapper-tdd-course/badge.svg?branch=master)](https://coveralls.io/github/mfpinheiro/spotify-wrapper-tdd-course?branch=master)
+
 A wrapper to work with the [Spotify Web API](https://developer.spotify.com/web-api)
 
 ## Getting Started
