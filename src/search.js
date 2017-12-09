@@ -7,6 +7,6 @@ export default function search() {
     artists: searcher.bind(this, 'artist'),
     albums: searcher.bind(this, 'album'),
     tracks: searcher.bind(this, 'track'),
-    playlists: searcher.bind(this, 'playlist'),
+    playLists: searcher.bind(this, 'playlist'),
   };
 }
