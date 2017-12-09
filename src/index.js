@@ -3,6 +3,8 @@ import toJSON from './utils';
 import album from './album';
 import search from './search';
 
+global.fetch = require('node-fetch');
+
 export default class SpotifyWrapper {
   constructor(options) {
     this.apiURL = options.apiURL || API_URL;
