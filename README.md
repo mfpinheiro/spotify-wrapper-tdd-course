@@ -36,18 +36,30 @@ $ npm install spotify-wrapper --save
 ### ES
 
 ```js
-// to import a specific method
-import { method } from 'spotify-wrapper';
+// Import
+import SpotifyWrapper from 'spotify-wrapper';
 
-// to import everything
-import * as spotifyWrapper from 'spotify-wrapper'
+const spotify = new SpotifyWrapper({
+  token: 'YOUR_TOKEN_HERE'
+});
+
+// Using his methods
+spotify.search.artists('Pearl Jam');
 ```
 
 ### CommonJS
 
 ```js
 var spotifyWrapper = require("spotify-wrapper");
+
+const spotify = new SpotifyWrapper({
+  token: 'YOUR_TOKEN_HERE'
+});
+
+// Using his methods
+spotify.search.artists('Pearl Jam');
 ```
+
 
 ### UMD in Browser
 
@@ -61,34 +73,23 @@ var spotifyWrapper = require("spotify-wrapper");
 After that the library will be available to the Global as `spotifyWrapper`. Follow an example:
 
 ```js
-const albums = spotifyWrapper.searchAlbums('Choosen Artist');
+const spotify = new SpotifyWrapper({
+  token: 'YOUR_TOKEN_HERE'
+});
+
+// Using his methods
+spotify.search.artists('Pearl Jam');
+
+const albums = spotify.search.albums('Choosen Artist');
 ```
 
 ## Methods
 
 > Follow the methods that the library provides.
 
-### search(query, types)
+### spotify.search exmples:
 
-> Search for informations about artists, albums, tracks or playlists. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/).
-
-**Arguments**
-
-| Argument | Type              | Options                                 |
-|----------|-------------------|-----------------------------------------|
-|`query`   |*string*           | 'Any search query'                      |
-|`type`    |*Array of strings* | ['artist', 'album', 'track', 'playlist']|
-
-**Example**
-
-```js
-search('Incubus', ['artist', 'album'])
-  .then(data => {
-    // do what you want with the data
-  })
-```
-
-### searchAlbums(query)
+### albums(query)
 
 > Search for informations about Albums with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *album*.
 
@@ -102,13 +103,13 @@ search('Incubus', ['artist', 'album'])
 **Example**
 
 ```js
-searchAlbums('Incubus')
+spotify.search.albums('Incubus')
   .then(data => {
     // do what you want with the data
   })
 ```
 
-### searchArtists(query)
+### artists(query)
 
 > Search for informations about Artists with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *artist*.
 
@@ -122,13 +123,13 @@ searchAlbums('Incubus')
 **Example**
 
 ```js
-searchArtists('Incubus')
+spotify.search.artists('Incubus')
   .then(data => {
     // do what you want with the data
   })
 ```
 
-### searchTracks(query)
+### tracks(query)
 
 > Search for informations about Tracks with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *track*.
 
@@ -142,13 +143,13 @@ searchArtists('Incubus')
 **Example**
 
 ```js
-searchTracks('Drive')
+spotify.search.tracks('Drive')
   .then(data => {
     // do what you want with the data
   })
 ```
 
-### searchPlaylists(query)
+### playLists(query)
 
 > Search for informations about Playlist with provided query. Test in [Spotify Web Console](https://developer.spotify.com/web-api/console/get-search-item/) with type defined as *playlist*.
 
@@ -162,11 +163,13 @@ searchTracks('Drive')
 **Example**
 
 ```js
-searchPlaylists('Happy Day')
+spotify.search.playLists('Happy Day')
   .then(data => {
     // do what you want with the data
   })
 ```
+
+### spotify.album exmples:
 
 ### getAlbum(id)
 
@@ -182,7 +185,7 @@ searchPlaylists('Happy Day')
 **Example**
 
 ```js
-getAlbum('4aawyAB9vmqN3uQ7FjRGTy')
+spotify.album.getAlbum('4aawyAB9vmqN3uQ7FjRGTy')
   .then(data => {
     // do what you want with the data
   })
@@ -201,7 +204,7 @@ getAlbum('4aawyAB9vmqN3uQ7FjRGTy')
 **Example**
 
 ```js
-getAlbum(['4aawyAB9vmqN3uQ7FjRGTy', '1A2GTWGtFfWp7KSQTwWOyo'])
+spotify.album.getAlbum(['4aawyAB9vmqN3uQ7FjRGTy', '1A2GTWGtFfWp7KSQTwWOyo'])
   .then(data => {
     // do what you want with the data
   })
@@ -220,7 +223,7 @@ getAlbum(['4aawyAB9vmqN3uQ7FjRGTy', '1A2GTWGtFfWp7KSQTwWOyo'])
 **Example**
 
 ```js
-getAlbum('4aawyAB9vmqN3uQ7FjRGTy')
+spotify.album.getAlbum('4aawyAB9vmqN3uQ7FjRGTy')
   .then(data => {
     // do what you want with the data
   })
