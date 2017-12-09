@@ -1,11 +1,11 @@
 import SpotifyWrapper from '../src/index';
 
 const spotify = new SpotifyWrapper({
-  token: 'GET TOKEN ON DEVELOPER.SPOTIFY.com',
+  token: 'Request your token at https://developer.spotify.com/web-api/',
 });
 
 global.fetch = require('node-fetch');
 
-const albums = spotify.search.album('Incubus');
+const albums = spotify.search.albums('Incubus');
 
 albums.then(data => console.log(data));
