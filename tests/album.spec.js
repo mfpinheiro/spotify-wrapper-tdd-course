@@ -1,4 +1,4 @@
-import chai, {expect} from 'chai';
+import chai, { expect } from 'chai';
 
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
@@ -30,7 +30,6 @@ describe('Album', () => {
   });
 
   describe('Smokes Tests', () => {
-
     it('should have getAlbum method', () => {
       expect(spotify.album.getAlbum).to.exist;
     });
@@ -49,19 +48,19 @@ describe('Album', () => {
     it('should call fetch with the correct URL', () => {
       const album = spotify.album.getAlbum('4aawyAB9vmqN3uQ7FjRGTy');
       expect(stubedFetch).to.have.been.calledWith(
-        'https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy?market=ES'
+        'https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy'
       );
 
       const album2 = spotify.album.getAlbum('4aawyAB9vmqN3uQ7FjRGT4');
       expect(stubedFetch).to.have.been.calledWith(
-        'https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGT4?market=ES'
+        'https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGT4'
       );
     });
 
     it('should return the correct data from Promise', () => {
-      promise.resolves({album: 'nome'});
+      promise.resolves({ album: 'nome' });
       const album = spotify.album.getAlbum('4aawyAB9vmqN3uQ7FjRGTy');
-      expect(album.resolveValue).to.be.eql({album: 'nome'});
+      expect(album.resolveValue).to.be.eql({ album: 'nome' });
     });
   });
 
@@ -77,17 +76,17 @@ describe('Album', () => {
         '5aawyAB9vmqN3uQ7FjRGT4',
       ]);
       expect(stubedFetch).to.have.been.calledWith(
-        'https://api.spotify.com/v1/albums/?ids=4aawyAB9vmqN3uQ7FjRGTy,5aawyAB9vmqN3uQ7FjRGT4?market=ES'
+        'https://api.spotify.com/v1/albums/?ids=4aawyAB9vmqN3uQ7FjRGTy,5aawyAB9vmqN3uQ7FjRGT4'
       );
     });
 
     it('should return the correct data from Promise', () => {
-      promise.resolves({album: 'nome'});
+      promise.resolves({ album: 'nome' });
       const albums = spotify.album.getAlbums([
         '4aawyAB9vmqN3uQ7FjRGTy',
         '5aawyAB9vmqN3uQ7FjRGT4',
       ]);
-      expect(albums.resolveValue).to.be.eql({album: 'nome'});
+      expect(albums.resolveValue).to.be.eql({ album: 'nome' });
     });
   });
 
@@ -105,9 +104,9 @@ describe('Album', () => {
     });
 
     it('should return the correct data from Promise', () => {
-      promise.resolves({album: 'nome'});
+      promise.resolves({ album: 'nome' });
       const tracks = spotify.album.getAlbumTracks('4aawyAB9vmqN3uQ7FjRGTy');
-      expect(tracks.resolveValue).to.be.eql({album: 'nome'});
+      expect(tracks.resolveValue).to.be.eql({ album: 'nome' });
     });
   });
 });
