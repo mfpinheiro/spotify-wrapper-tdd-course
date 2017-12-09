@@ -28,7 +28,7 @@ you'll need to provide a [pollyfill](https://github.com/github/fetch) to browser
 ### Installing
 
 ```sh
-$ npm install spotify-wrapper --save
+$ npm install spotify-wrapper-tdd-course --save
 ```
 
 ## How to use
@@ -37,7 +37,7 @@ $ npm install spotify-wrapper --save
 
 ```js
 // Import
-import SpotifyWrapper from 'spotify-wrapper';
+import SpotifyWrapper from 'spotify-wrapper-tdd-course';
 
 const spotify = new SpotifyWrapper({
   token: 'YOUR_TOKEN_HERE'
@@ -50,7 +50,7 @@ spotify.search.artists('Pearl Jam');
 ### CommonJS
 
 ```js
-var spotifyWrapper = require("spotify-wrapper");
+var spotifyWrapper = require("spotify-wrapper-tdd-course");
 
 const spotify = new SpotifyWrapper({
   token: 'YOUR_TOKEN_HERE'
@@ -65,12 +65,12 @@ spotify.search.artists('Pearl Jam');
 
 ```html
 <!-- to import non-minified version -->
-<script src="spotify-wrapper.umd.js"></script>
+<script src="spotifyWrapper.umd.js"></script>
 <!-- to import minified version -->
-<script src="spotify-wrapper.umd.min.js"></script>
+<script src="spotifyWrapper.umd.min.js"></script>
 ```
 
-After that the library will be available to the Global as `spotifyWrapper`. Follow an example:
+After that the library will be available to the Global as `SpotifyWrapper`. Follow an example:
 
 ```js
 const spotify = new SpotifyWrapper({
