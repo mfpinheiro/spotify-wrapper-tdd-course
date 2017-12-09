@@ -1,7 +1,8 @@
-import API_URL from './config';
-import toJSON from './utils';
 import album from './album';
 import search from './search';
+
+import API_URL from './config';
+import toJSON from './utils';
 
 global.fetch = require('node-fetch');
 

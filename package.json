@@ -1,6 +1,6 @@
 {
   "name": "spotify-wrapper-tdd-course",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "A wrapper to work with the [Spotify Web API]",
   "main": "lib/index.js",
   "scripts": {

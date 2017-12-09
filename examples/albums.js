@@ -1,4 +1,4 @@
-import SpotifyWrapper from '../src/index';
+const import SpotifyWrapper from '../src/index';
 
 const spotify = new SpotifyWrapper({
   token: 'Request your token at https://developer.spotify.com/web-api/',
