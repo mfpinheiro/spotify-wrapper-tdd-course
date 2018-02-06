@@ -50,6 +50,13 @@ spotify.search.artists('Pearl Jam');
 ### CommonJS
 
 ```js
+<div>
+  {
+  const spotify = new SpotifyWrapper({
+  token: 'YOUR_TOKEN_HERE'
+   });
+}
+</div>
 var spotifyWrapper = require("spotify-wrapper-tdd-course");
 
 const spotify = new SpotifyWrapper({
